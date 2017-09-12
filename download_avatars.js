@@ -23,9 +23,8 @@ function getRepoContributors(repoOwner, repoName, cb) {
 
 getRepoContributors("jquery", "jquery", (err, result) => {
   console.log("Errors:", err);
-  //console.log("Result:", result);
   result.forEach((currentValue) => {
-    console.log(currentValue.avatar_url);
+    downloadImageByURL(currentValue.avatar_url, "avatars/" + currentValue.login + ".jpg");
   })
 })
 
